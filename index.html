@@ -1,0 +1,635 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Betty Decor Harar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500;600&family=Noto+Serif+Ethiopic:wght@500;600&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap">
+<style>
+/* Layout: slim sticky header with language switch, compact hero with Telegram + phone, search and category chips, masonry gallery of decor photos, selection tray pinned to the bottom, short steps, FAQ, contact. */
+:root{
+  color-scheme:light;
+  --bg:#FFFEFB; --surface:#FFFFFF; --fg:#2A2118; --muted:#6E6354; --line:#EFE6D2;
+  --gold:#8F6A12; --gold-soft:#FBF1D6; --champagne:#FAF3E2; --btn-a:#D4AF55; --btn-b:#F0D890; --btn-fg:#2A1E08;
+  --shadow:0 -8px 28px rgba(143,106,18,.14);
+  --display:"Cormorant Garamond","Noto Serif Ethiopic",Georgia,serif;
+  --body:"Jost","Noto Sans Ethiopic",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+/* One bright theme by design, so the page looks the same on every phone setting. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,var(--champagne) 0,var(--bg) 560px) no-repeat var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;-webkit-text-size-adjust:100%}
+html[lang="am"] body{line-height:1.75}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+body.has-tray{padding-block-end:96px}
+img{display:block}
+button,input,textarea{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.ico{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.muted{color:var(--muted)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.brand-name{font-family:var(--display);font-size:1.7rem;font-weight:600;letter-spacing:.01em}
+.brand-sub{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--surface);flex:none}
+.lang button{border:0;background:transparent;padding:0 14px;min-height:38px;border-radius:999px;cursor:pointer;font-weight:500}
+.lang button[aria-pressed="true"]{background:linear-gradient(135deg,var(--btn-a),var(--btn-b));color:var(--btn-fg)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;text-decoration:none;font-weight:500;font-size:.95rem}
+.btn.primary{border-color:transparent;background:linear-gradient(135deg,var(--btn-a),var(--btn-b));color:var(--btn-fg)}
+.btn.small{min-height:38px;padding:0 14px;font-size:.88rem}
+
+/* hero */
+.hero{padding-block:38px 26px}
+.eyebrow{margin:0 0 12px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:500;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold)}
+h1{font-family:var(--display);font-weight:500;font-size:clamp(2.5rem,9vw,4.6rem);line-height:1.04;margin:0 0 14px;text-wrap:balance;max-width:14ch}
+html[lang="am"] h1{line-height:1.25;max-width:none;font-size:clamp(2.1rem,7.5vw,3.8rem)}
+.lead{max-width:60ch;margin:0 0 22px;color:var(--muted);font-size:1.05rem}
+.hero-contact{display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.phone{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.phone-num{font-variant-numeric:tabular-nums;font-weight:600;font-size:1.15rem;text-decoration:none;border-bottom:1px solid var(--gold);white-space:nowrap}
+
+/* gallery tools */
+.block{padding-block:34px}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.15;margin:0 0 14px;text-wrap:balance}
+html[lang="am"] h2{line-height:1.35}
+.tools{display:grid;gap:14px;padding-block:6px 12px}
+.search{position:relative}
+.search input{width:100%;min-height:50px;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:0 16px 0 46px;font-size:1rem}
+.search .ico{position:absolute;left:15px;top:16px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;font-size:.92rem}
+.chip[aria-pressed="true"]{background:var(--gold-soft);border-color:var(--gold);font-weight:500}
+.count{margin:4px 0 14px;color:var(--muted);font-size:.9rem}
+.gallery{columns:2;column-gap:12px}
+@media (min-width:720px){.gallery{columns:3;column-gap:16px}}
+@media (min-width:1000px){.gallery{columns:4}}
+.card{break-inside:avoid;margin:0 0 16px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:block}
+.card.on{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}
+.shot{display:block;width:100%;padding:0;border:0;background:var(--line);cursor:zoom-in;position:relative}
+.shot img{width:100%;height:100%;object-fit:cover}
+.badge{position:absolute;left:8px;top:8px;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--fg)}
+.cap{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 10px 10px 12px}
+.cap-t{min-width:0;display:flex;flex-direction:column}
+.cap-t strong{font-weight:500;font-size:.95rem;line-height:1.3}
+.cap-t span{font-size:.78rem;color:var(--muted)}
+.pick{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:transparent;display:grid;place-items:center;cursor:pointer}
+.pick .chk,.card.on .pick .plus{display:none}
+.card.on .pick .chk{display:block}
+.card.on .pick{background:linear-gradient(135deg,var(--btn-a),var(--btn-b));border-color:transparent;color:var(--btn-fg)}
+.empty{padding:36px 0;text-align:center;display:grid;gap:14px;justify-items:center}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--gold);padding-top:14px}
+.steps li::before{content:counter(s);font-family:var(--display);font-size:2.2rem;color:var(--gold);line-height:1;display:block;margin-bottom:6px}
+.steps b{display:block;font-weight:600;margin-bottom:4px}
+.steps p{margin:0;color:var(--muted)}
+
+/* faq */
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-child{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;min-height:56px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-weight:500;font-size:1.02rem}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;color:var(--gold);line-height:1}
+.faq details[open] summary::after{content:"\2212"}
+.faq p{margin:0 0 18px;color:var(--muted);max-width:62ch}
+
+/* contact */
+.contact{list-style:none;margin:18px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.crow{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);text-decoration:none;min-height:68px}
+.crow>.ico{width:22px;height:22px;color:var(--gold)}
+.crow span{display:flex;flex-direction:column;min-width:0;flex:1}
+.crow small{color:var(--muted);font-size:.85rem;overflow-wrap:anywhere}
+.crow b{font-weight:500}
+footer{border-top:1px solid var(--line);padding-block:22px 30px;color:var(--muted);font-size:.85rem}
+
+/* tray */
+.tray{position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:var(--bg);border-top:1px solid var(--gold);box-shadow:var(--shadow)}
+.tray-in{max-width:1120px;margin:0 auto}
+.tray-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px}
+.tray-count{font-weight:600}
+.tray-btns{display:flex;flex-wrap:wrap;gap:8px}
+.tray-panel{max-height:58vh;overflow:auto;padding-bottom:14px;margin-bottom:10px;border-bottom:1px solid var(--line);display:grid;gap:12px}
+.tray-panel h3{font-family:var(--display);font-weight:500;font-size:1.5rem;margin:0}
+.picks{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.picks li{display:flex;align-items:center;gap:12px}
+.picks img{width:48px;height:48px;object-fit:cover;border-radius:8px;flex:none;background:var(--line)}
+.picks span{flex:1;min-width:0;font-size:.95rem}
+.picks button{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;cursor:pointer;display:grid;place-items:center}
+.msg-label{font-size:.85rem;color:var(--muted)}
+.tray-panel textarea{width:100%;min-height:130px;border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:12px;resize:vertical;font-size:.95rem;line-height:1.5}
+.note{margin:0;font-size:.85rem;color:var(--muted)}
+.panel-actions{display:flex;flex-wrap:wrap;gap:8px}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:70;background:rgba(255,251,242,.97);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb-box{width:min(560px,100%);max-height:100%;display:flex;flex-direction:column;gap:12px}
+.lb-box img{width:100%;max-height:66vh;object-fit:contain;border-radius:12px;background:var(--champagne)}
+.lb-cap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;color:var(--fg)}
+.lb-cap small{display:block;color:var(--muted)}
+.lb-close{align-self:flex-end;min-height:40px;padding:0 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+  <symbol id="i-tt" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="#top">
+      <span class="brand-name" data-i18n="brandName">Betty Decor</span>
+      <span class="brand-sub" data-i18n="brandSub">Harar</span>
+    </a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="am" aria-pressed="false">አማ</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="wrap hero">
+    <p class="eyebrow" data-i18n="where">Harar, Ethiopia</p>
+    <h1 data-i18n="tagline">We Make Moments Beautiful</h1>
+    <p class="lead" data-i18n="lead"></p>
+    <div class="hero-contact">
+      <a class="btn primary" href="https://t.me/BettydecorHarar" target="_blank" rel="noopener"><svg class="ico"><use href="#i-send"/></svg><span data-i18n="telegram">Message us on Telegram</span></a>
+      <div class="phone">
+        <svg class="ico"><use href="#i-phone"/></svg>
+        <a class="phone-num" href="tel:+251986339628">+251 98 633 9628</a>
+        <button type="button" class="btn small" data-copy="+251986339628"><svg class="ico"><use href="#i-copy"/></svg><span data-i18n="copy">Copy</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="gallery" aria-labelledby="galleryTitle">
+    <h2 id="galleryTitle" data-i18n="galleryTitle">Our decor works</h2>
+    <div class="tools">
+      <div class="search">
+        <svg class="ico"><use href="#i-search"/></svg>
+        <input id="q" type="search" autocomplete="off" data-i18n-ph="search" data-i18n-aria="search" placeholder="Search decor">
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Categories"></div>
+    </div>
+    <p class="count" id="count" aria-live="polite"></p>
+    <div class="gallery" id="grid"></div>
+    <div class="empty" id="empty" hidden>
+      <p data-i18n="noMatch">No decor matches your search.</p>
+      <button type="button" class="btn" id="reset" data-i18n="reset">Show all</button>
+    </div>
+    <p class="note" data-i18n="priceNote"></p>
+  </section>
+
+  <section class="wrap block" aria-labelledby="stepsTitle">
+    <h2 id="stepsTitle" data-i18n="stepsTitle">How it works</h2>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section class="wrap block" aria-labelledby="faqTitle">
+    <h2 id="faqTitle" data-i18n="faqTitle">Questions</h2>
+    <div class="faq" id="faq"></div>
+  </section>
+
+  <section class="wrap block" id="contact" aria-labelledby="contactTitle">
+    <h2 id="contactTitle" data-i18n="contactTitle">Contact us</h2>
+    <p class="muted" data-i18n="area"></p>
+    <ul class="contact">
+      <li><a class="crow" href="https://t.me/BettydecorHarar" target="_blank" rel="noopener"><svg class="ico"><use href="#i-send"/></svg><span><b>Telegram</b><small>@BettydecorHarar</small></span></a></li>
+      <li><div class="crow"><svg class="ico"><use href="#i-phone"/></svg><span><b data-i18n="phone">Phone</b><a class="phone-num" href="tel:+251986339628" style="width:fit-content">+251 98 633 9628</a></span><button type="button" class="btn small" data-copy="+251986339628"><svg class="ico"><use href="#i-copy"/></svg><span data-i18n="copy">Copy</span></button></div></li>
+      <li><a class="crow" href="https://www.instagram.com/betty_duresa_bettydecor" target="_blank" rel="noopener"><svg class="ico"><use href="#i-ig"/></svg><span><b>Instagram</b><small>betty_duresa_bettydecor</small></span></a></li>
+      <li><a class="crow" href="https://www.tiktok.com/@bettydecor16" target="_blank" rel="noopener"><svg class="ico"><use href="#i-tt"/></svg><span><b>TikTok</b><small>@bettydecor16</small></span></a></li>
+      <li><div class="crow"><svg class="ico"><use href="#i-pin"/></svg><span><b data-i18n="location">Location</b><small data-i18n="locationVal">Harar, Ethiopia</small></span></div></li>
+    </ul>
+  </section>
+</main>
+
+<footer><div class="wrap"><span data-i18n="brandName">Betty Decor</span> · <span data-i18n="tagline">We Make Moments Beautiful</span></div></footer>
+
+<div class="tray" id="tray" hidden>
+  <div class="tray-in">
+    <div class="tray-panel" id="panel" hidden>
+      <h3 data-i18n="yourPicks">Your picks</h3>
+      <ul class="picks" id="picks"></ul>
+      <label class="msg-label" for="msg" data-i18n="msgLabel">Your message</label>
+      <textarea id="msg"></textarea>
+      <p class="note" data-i18n="tgHint"></p>
+      <div class="panel-actions">
+        <button type="button" class="btn small" id="copyMsg"><svg class="ico"><use href="#i-copy"/></svg><span data-i18n="copyMsg">Copy message</span></button>
+        <button type="button" class="btn small" id="clearAll" data-i18n="clear">Clear all</button>
+        <a class="btn small" href="tel:+251986339628"><svg class="ico"><use href="#i-phone"/></svg><span>+251 98 633 9628</span></a>
+      </div>
+    </div>
+    <div class="tray-bar">
+      <span class="tray-count" id="trayCount"></span>
+      <div class="tray-btns">
+        <button type="button" class="btn" id="trayToggle" aria-expanded="false" aria-controls="panel" data-i18n="view">View list</button>
+        <a class="btn primary" id="trayTg" href="https://t.me/BettydecorHarar" target="_blank" rel="noopener"><svg class="ico"><use href="#i-send"/></svg><span data-i18n="send">Send on Telegram</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo" hidden>
+  <div class="lb-box">
+    <button type="button" class="lb-close" id="lbClose"><svg class="ico"><use href="#i-x"/></svg><span data-i18n="close">Close</span></button>
+    <img id="lbImg" alt="">
+    <div class="lb-cap">
+      <div><strong id="lbTitle"></strong><small id="lbCat"></small></div>
+      <button type="button" class="btn primary" id="lbPick"><svg class="ico"><use href="#i-check"/></svg><span></span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var TG="BettydecorHarar", PHONE="+251986339628";
+
+  /* ============================================================
+     EDIT HERE: your decor categories and photos.
+     To add a photo: copy one line in PHOTOS, change cat / en / am,
+     and set img to the photo file name, e.g. img:"photos/wedding-1.jpg".
+     A line with img:"" shows a sample picture instead.
+     ============================================================ */
+  var CATS=[
+    {id:"christening",en:"Christening",am:"ክርስትና"},
+    {id:"birthday",en:"Birthday",am:"ልደት"},
+    {id:"graduation",en:"Graduation",am:"ምርቃት"},
+    {id:"shimgilina",en:"Shimgilina",am:"ሽምግልና"},
+    {id:"qelebet",en:"Qelebet",am:"ቀለበት"},
+    {id:"bride",en:"Bride To Be",am:"Bride To Be"},
+    {id:"wedding",en:"Wedding",am:"ሰርግ"},
+    {id:"nikah",en:"Nikah",am:"ኒካህ"},
+    {id:"melse",en:"Melse",am:"መልስ"},
+    {id:"kilkil",en:"Kilkil",am:"ቅልቅል"},
+    {id:"babyshower",en:"Baby Shower",am:"የአጥር ወፍ አትስማሽ"},
+    {id:"henna",en:"Henna",am:"ሂና"},
+    {id:"other",en:"Other",am:"ሌሎች"}
+  ];
+  var PHOTOS=[
+    {cat:"birthday",en:"Brown and cream balloon garland",am:"ቡናማና ክሬም የፊኛ ጥብጣብ",img:"photos/birthday-1.jpg",ratio:"736/1093"},
+    {cat:"birthday",en:"Olive drape arch with roses",am:"የወይራ ቀለም ጨርቅ ቅስት ከአበባ ጋር",img:"photos/birthday-2.jpg",ratio:"736/1161"},
+    {cat:"birthday",en:"Gold and caramel round backdrop",am:"ወርቃማና ካራሜል ክብ ጀርባ",img:"photos/birthday-3.jpg",ratio:"900/1154"},
+    {cat:"birthday",en:"Caramel balloons with pampas",am:"ካራሜል ፊኛና የፓምፓስ ሣር",img:"photos/birthday-4.jpg",ratio:"900/1200"},
+    {cat:"birthday",en:"Lilac and rose gold birthday",am:"ሊላና ሮዝ ወርቅ የልደት ዝግጅት",img:"photos/birthday-5.jpg",ratio:"900/1039"},
+    {cat:"graduation",en:"Blue and white congratulations backdrop",am:"ሰማያዊና ነጭ የእንኳን ደስ አለዎት ጀርባ",img:"photos/birthday-6.jpg",ratio:"900/880"},
+    {cat:"birthday",en:"Royal blue 3rd birthday",am:"ሰማያዊ የ3ኛ ዓመት ልደት",img:"photos/birthday-7.jpg",ratio:"854/1280"},
+    {cat:"birthday",en:"Sky blue arch with royal drape",am:"ሰማያዊ ቅስት ከሰማያዊ ጨርቅ ጋር",img:"photos/birthday-8.jpg",ratio:"682/1280"},
+    {cat:"birthday",en:"Black, white and gold first birthday",am:"ጥቁር፣ ነጭና ወርቃማ የ1ኛ ዓመት ልደት",img:"photos/birthday-9.jpg",ratio:"720/1280"},
+    {cat:"bride",en:"Chocolate drape Bride To Be",am:"ቡናማ ጨርቅ የBride To Be ዝግጅት",img:"photos/bride-1.jpg",ratio:"900/996"},
+    {cat:"bride",en:"Burgundy drape and white flowers",am:"ቡርጋንዲ ጨርቅና ነጭ አበባዎች",img:"photos/bride-2.jpg",ratio:"831/1280"},
+    {cat:"bride",en:"White arch with red roses",am:"ነጭ ቅስት ከቀይ ጽጌረዳ ጋር",img:"photos/bride-3.jpg",ratio:"720/1280"},
+    {cat:"bride",en:"Emerald X drape with neon sign",am:"አረንጓዴ የX ቅርጽ ጨርቅ ከኒዮን ጋር",img:"photos/bride-4.jpg",ratio:"900/1035"},
+    {cat:"christening",en:"Olive green and white floral canopy",am:"አረንጓዴና ነጭ የአበባ ጣሪያ",img:"photos/christening-1.jpg",ratio:"720/1280"},
+    {cat:"christening",en:"Cream X drapes with flower columns",am:"የX ቅርጽ ጨርቅ ከአበባ አምዶች ጋር",img:"photos/christening-2.jpg",ratio:"900/634"},
+    {cat:"christening",en:"Pink swag drape backdrop",am:"ሮዝ ጨርቅ ጀርባ",img:"photos/christening-3.jpg",ratio:"900/865"},
+    {cat:"christening",en:"Floral arch and cross neon",am:"የአበባ ቅስትና የመስቀል ኒዮን",img:"photos/christening-4.jpg",ratio:"900/861"},
+    {cat:"christening",en:"Green and white drape with blossoms",am:"አረንጓዴና ነጭ ጨርቅ ከአበባ ጋር",img:"photos/christening-5.jpg",ratio:"900/1125"},
+    {cat:"graduation",en:"Teal-lit cross drapes",am:"በቱርኮይዝ ብርሃን የተዋበ የጨርቅ ጀርባ",img:"photos/graduation-1.jpg",ratio:"900/1134"},
+    {cat:"graduation",en:"Olive X drapes with candle lights",am:"የወይራ ቀለም የX ጨርቅ ከመብራት አምዶች ጋር",img:"photos/graduation-2.jpg",ratio:"900/1118"},
+    {cat:"graduation",en:"Gold swag on white curtain",am:"ወርቃማ ጨርቅ በነጭ መጋረጃ ላይ",img:"photos/graduation-3.jpg",ratio:"720/1280"},
+    {cat:"graduation",en:"Olive X drapes with blue flowers",am:"የወይራ የX ጨርቅ ከሰማያዊ አበባ ጋር",img:"photos/graduation-4.jpg",ratio:"720/1280"},
+    {cat:"graduation",en:"Olive sofa under chandelier",am:"የወይራ ቀለም ሶፋ ከሻንደሊየር ጋር",img:"photos/graduation-5.jpg",ratio:"900/1211"},
+    {cat:"graduation",en:"Emerald drape with blue flowers",am:"አረንጓዴ ጨርቅ ከሰማያዊ አበባ ጋር",img:"photos/graduation-6.jpg",ratio:"798/1280"},
+    {cat:"graduation",en:"Blue drape with floral columns",am:"ሰማያዊ ጨርቅ ከአበባ አምዶች ጋር",img:"photos/graduation-7.jpg",ratio:"900/704"},
+    {cat:"graduation",en:"Pink and lilac floral arch",am:"ሮዝና ሊላ የአበባ ቅስት",img:"photos/graduation-8.jpg",ratio:"900/1177"},
+    {cat:"graduation",en:"Sky blue swag drape",am:"ሰማያዊ የጨርቅ ጀርባ",img:"photos/graduation-9.jpg",ratio:"900/1029"},
+    {cat:"graduation",en:"Champagne X drape with fairy lights",am:"ሻምፓኝ ቀለም የX ጨርቅ ከመብራት ጋር",img:"photos/graduation-10.jpg",ratio:"720/1280"},
+    {cat:"graduation",en:"Gold throne with black drape",am:"ወርቃማ ዙፋን ከጥቁር ጨርቅ ጋር",img:"photos/graduation-11.jpg",ratio:"818/1280"},
+    {cat:"graduation",en:"Peach drape with white blossoms",am:"ፒች ቀለም ጨርቅ ከነጭ አበባ ጋር",img:"photos/graduation-12.jpg",ratio:"900/1200"},
+    {cat:"graduation",en:"Maroon backdrop under ivy canopy",am:"ማሮን ጀርባ ከአይቪ ጣሪያ ጋር",img:"photos/graduation-13.jpg",ratio:"900/1106"},
+    {cat:"graduation",en:"Red drape with gold chair",am:"ቀይ ጨርቅ ከወርቃማ ወንበር ጋር",img:"photos/graduation-14.jpg",ratio:"900/1200"},
+    {cat:"graduation",en:"Navy drape with blue-grey florals",am:"ጥቁር ሰማያዊ ጨርቅ ከአበባ ጋር",img:"photos/graduation-15.jpg",ratio:"900/860"},
+    {cat:"melse",en:"Twin gold thrones with olive drape",am:"ሁለት ወርቃማ ዙፋኖች ከወይራ ቀለም ጨርቅ ጋር",img:"photos/melse-1.jpg",ratio:"574/1280"},
+    {cat:"melse",en:"Burgundy arch with white sofa table",am:"ቡርጋንዲ ቅስት ከነጭ ሶፋና ጠረጴዛ ጋር",img:"photos/melse-2.jpg",ratio:"900/1200"},
+    {cat:"shimgilina",en:"Olive X drapes with candles",am:"የወይራ የX ጨርቅ ከሻማዎች ጋር",img:"photos/shimgilina-1.jpg",ratio:"713/1280"},
+    {cat:"shimgilina",en:"Traditional baskets and butterfly arch",am:"ባህላዊ ቅርጫቶችና የቢራቢሮ ቅስት",img:"photos/shimgilina-2.jpg",ratio:"861/1280"},
+    {cat:"shimgilina",en:"White drape with gold chandelier",am:"ነጭ ጨርቅ ከወርቃማ ሻንደሊየር ጋር",img:"photos/shimgilina-3.jpg",ratio:"900/889"},
+    {cat:"shimgilina",en:"Gold throne with olive and blue drapes",am:"ወርቃማ ዙፋን ከወይራና ሰማያዊ ጨርቅ ጋር",img:"photos/shimgilina-4.jpg",ratio:"574/1280"},
+    {cat:"shimgilina",en:"Olive drape with white blossoms",am:"የወይራ ጨርቅ ከነጭ አበባ ጋር",img:"photos/shimgilina-5.jpg",ratio:"900/1188"},
+    {cat:"shimgilina",en:"Olive sunburst with blue-white florals",am:"አረንጓዴ ክብ ጀርባ ከሰማያዊና ነጭ አበባ ጋር",img:"photos/shimgilina-6.jpg",ratio:"900/878"},
+    {cat:"shimgilina",en:"Golden yellow drape with candle lights",am:"ወርቃማ ቢጫ ጨርቅ ከመብራት አምዶች ጋር",img:"photos/shimgilina-7.jpg",ratio:"848/1280"},
+    {cat:"shimgilina",en:"Cream drape with red roses",am:"ክሬም ጨርቅ ከቀይ ጽጌረዳ ጋር",img:"photos/shimgilina-8.jpg",ratio:"506/868"},
+    {cat:"shimgilina",en:"Round floral arch with pink blooms",am:"ክብ የአበባ ቅስት ከሮዝ አበባ ጋር",img:"photos/shimgilina-9.jpg",ratio:"900/1198"},
+    {cat:"nikah",en:"Gold X drapes, Nikah Mubarak",am:"ወርቃማ የX ጨርቅ፣ ኒካህ ሙባረክ",img:"photos/nikah-1.jpg",ratio:"576/661"},
+    {cat:"nikah",en:"Twin white thrones, Nikah Mubarak",am:"ሁለት ነጭ ዙፋኖች፣ ኒካህ ሙባረክ",img:"photos/nikah-2.jpg",ratio:"900/1200"},
+    {cat:"qelebet",en:"Green sofa with Qelebet sign",am:"ቀለበት ጽሑፍ ያለው አረንጓዴ ሶፋ",img:"photos/qelebet-1.jpg",ratio:"900/522"},
+    {cat:"wedding",en:"Gold thrones with brown drape",am:"ወርቃማ ዙፋኖች ከቡናማ ጨርቅ ጋር",img:"photos/wedding-1.jpg",ratio:"900/506"},
+    {cat:"qelebet",en:"White floral arches with Qelebet sign",am:"ነጭ የአበባ ቅስቶች ከቀለበት ጽሑፍ ጋር",img:"photos/qelebet-2.jpg",ratio:"720/1280"},
+    {cat:"henna",en:"Henna Night red X",am:"ሂና ምሽት ቀይ ጀርባ",img:"photos/henna-1.jpg",ratio:"736/981"},
+    {cat:"kilkil",en:"Blue arch backdrop",am:"ሰማያዊ ቅስት ጀርባ",img:"photos/kilkil-1.jpg",ratio:"574/1280"},
+    {cat:"babyshower",en:"Blue swag backdrop",am:"ሰማያዊ ጨርቅ ጀርባ",img:"photos/babyshower-1.jpg",ratio:"900/675"},
+    {cat:"kilkil",en:"Navy swag with gold chair",am:"ጥቁር ሰማያዊ ጨርቅ ከወርቃማ ወንበር ጋር",img:"photos/kilkil-2.jpg",ratio:"893/867"},
+    {cat:"wedding",en:"Teal and navy drape",am:"አረንጓዴና ጥቁር ሰማያዊ ጨርቅ",img:"photos/wedding-2.jpg",ratio:"647/1150"},
+    {cat:"wedding",en:"Grey cross drape and sofa",am:"ግራጫ ጨርቅ ከሶፋ ጋር",img:"photos/wedding-3.jpg",ratio:"736/1248"},
+    {cat:"babyshower",en:"Cream drape with blue roses",am:"ክሬም ጨርቅ ከሰማያዊ ጽጌረዳ ጋር",img:"photos/babyshower-2.jpg",ratio:"736/1248"},
+    {cat:"other",en:"Olive arch stage",am:"የወይራ ቀለም ቅስት መድረክ",img:"photos/other-1.jpg",ratio:"736/950"},
+    {cat:"henna",en:"Red sunburst backdrop",am:"ቀይ ክብ ጀርባ",img:"photos/henna-2.jpg",ratio:"900/1200"},
+    {cat:"kilkil",en:"Gold X drape with candles",am:"ወርቃማ የX ጨርቅ ከመብራት ጋር",img:"photos/kilkil-3.jpg",ratio:"811/1280"},
+    {cat:"shimgilina",en:"Cream X drape with floral columns",am:"ክሬም የX ጨርቅ ከአበባ ጋር",img:"photos/shimgilina-10.jpg",ratio:"900/1200"},
+    {cat:"babyshower",en:"Blush pink cross drape",am:"ሮዝ የጨርቅ ጀርባ",img:"photos/babyshower-3.jpg",ratio:"736/736"},
+    {cat:"graduation",en:"Maroon drape with gold throne",am:"ማሮን ጨርቅ ከወርቃማ ዙፋን ጋር",img:"photos/graduation-16.jpg",ratio:"720/1280"},
+    {cat:"other",en:"Olive circle with white flowers",am:"የወይራ ክብ ጀርባ ከነጭ አበባ ጋር",img:"photos/other-2.jpg",ratio:"900/612"},
+    {cat:"wedding",en:"Twin gold thrones",am:"ሁለት ወርቃማ ዙፋኖች",img:"photos/wedding-4.jpg",ratio:"900/675"},
+    {cat:"other",en:"Floral arch with chair",am:"የአበባ ቅስት ከወንበር ጋር",img:"photos/other-3.jpg",ratio:"576/1280"}
+  ];
+  /* ============================ end of editable list ============================ */
+
+  var I18N={
+    en:{
+      brandName:"Betty Decor",brandSub:"Harar · ቤቲ ዲኮር",where:"Harar, Ethiopia",
+      tagline:"We Make Moments Beautiful",
+      lead:"Decor for christenings, weddings, birthdays and every celebration in Harar. Pick the designs you love and message us on Telegram. We customize each one for you.",
+      telegram:"Message us on Telegram",copy:"Copy",copied:"Copied",
+      search:"Search decor, e.g. wedding, arch, balloons",all:"All",galleryTitle:"Our decor works",
+      priceNote:"Prices are customized. We tell you the price on Telegram after you choose.",
+      sample:"Sample",select:"Select",remove:"Remove",view:"View list",hide:"Hide list",
+      send:"Send on Telegram",clear:"Clear all",yourPicks:"Your picks",msgLabel:"Your message (you can edit it)",
+      copyMsg:"Copy message",tgHint:"If Telegram opens without the text, tap Copy message and paste it into the chat.",
+      noMatch:"No decor matches your search.",reset:"Show all",
+      stepsTitle:"How it works",faqTitle:"Questions",contactTitle:"Contact us",
+      area:"Based in Harar. We also work in places close to Harar.",
+      phone:"Phone",location:"Location",locationVal:"Harar, Ethiopia",close:"Close",
+      works:function(n){return n+(n===1?" work":" works")},
+      picked:function(n){return n+" selected"},
+      msgHello:"Hello Betty Decor! I would like to know more about these decor works:",
+      msgAsk:"Event date:\nPlace:\nPlease tell me the price."
+    },
+    am:{
+      brandName:"ቤቲ ዲኮር",brandSub:"ሐረር · Betty Decor",where:"ሐረር፣ ኢትዮጵያ",
+      tagline:"ውበትን ወደ ትዝታ!",
+      lead:"በሐረርና በአቅራቢያው ለክርስትና፣ ለሰርግ፣ ለልደትና ለሁሉም ዝግጅቶች ዲኮር። የወደዱትን ይምረጡ፣ በቴሌግራም ይፃፉልን። እያንዳንዱን እንደ ጥያቄዎ እናዘጋጃለን።",
+      telegram:"በቴሌግራም ያናግሩን",copy:"ገልብጥ",copied:"ተገልብጧል",
+      search:"ዲኮር ይፈልጉ፣ ለምሳሌ ሰርግ፣ ቅስት፣ ፊኛ",all:"ሁሉም",galleryTitle:"የዲኮር ስራዎቻችን",
+      priceNote:"ዋጋው እንደ ጥያቄዎ ይዘጋጃል። ከመረጡ በኋላ በቴሌግራም እንነግርዎታለን።",
+      sample:"ናሙና",select:"ምረጥ",remove:"አስወግድ",view:"ዝርዝር ይመልከቱ",hide:"ዝርዝር ደብቅ",
+      send:"በቴሌግራም ይላኩ",clear:"ሁሉንም አጽዳ",yourPicks:"የመረጧቸው",msgLabel:"መልእክትዎ (ማስተካከል ይችላሉ)",
+      copyMsg:"መልእክቱን ገልብጥ",tgHint:"ቴሌግራም ያለ ጽሑፍ ከተከፈተ «መልእክቱን ገልብጥ» ን ተጭነው ውይይቱ ውስጥ ይለጥፉት።",
+      noMatch:"ከፍለጋዎ ጋር የሚሄድ ዲኮር አልተገኘም።",reset:"ሁሉንም አሳይ",
+      stepsTitle:"እንዴት ይሰራል",faqTitle:"ተደጋጋሚ ጥያቄዎች",contactTitle:"ያግኙን",
+      area:"መቀመጫችን ሐረር ነው። በሐረር አቅራቢያ ባሉ ቦታዎችም እንሰራለን።",
+      phone:"ስልክ",location:"አድራሻ",locationVal:"ሐረር፣ ኢትዮጵያ",close:"ዝጋ",
+      works:function(n){return n+" ስራዎች"},
+      picked:function(n){return n+" ተመርጠዋል"},
+      msgHello:"ሰላም ቤቲ ዲኮር! ስለእነዚህ ዲኮሮች ማወቅ እፈልጋለሁ፦",
+      msgAsk:"የዝግጅቱ ቀን፦\nቦታ፦\nእባክዎ ዋጋውን ይንገሩኝ።"
+    }
+  };
+  var STEPS=[
+    {t:{en:"Choose",am:"ይምረጡ"},d:{en:"Browse the gallery and select the decor you like.",am:"ማዕከለ ስዕሉን ይመልከቱ፣ የወደዱትን ዲኮር ይምረጡ።"}},
+    {t:{en:"Message us",am:"ይፃፉልን"},d:{en:"Send your picks on Telegram with the date and place of your event.",am:"የመረጧቸውን ከዝግጅትዎ ቀንና ቦታ ጋር በቴሌግራም ይላኩልን።"}},
+    {t:{en:"Get your price",am:"ዋጋዎን ያግኙ"},d:{en:"We reply with the design details and the price for your event.",am:"የዲዛይኑን ዝርዝርና ለዝግጅትዎ የሚሆን ዋጋ እንመልሳለን።"}}
+  ];
+  var FAQ=[
+    {q:{en:"How do I order?",am:"እንዴት ማዘዝ እችላለሁ?"},a:{en:"Select the decor you like, then tap Send on Telegram. Your picks go into a message to us, and we reply with the details and the price.",am:"የወደዱትን ዲኮር ይምረጡ፣ ከዚያ «በቴሌግራም ይላኩ» ይጫኑ። የመረጧቸው በመልእክት መልክ ወደ እኛ ይደርሳሉ፤ ዝርዝሩንና ዋጋውን እንመልሳለን።"}},
+    {q:{en:"How much does it cost?",am:"ዋጋው ስንት ነው?"},a:{en:"Every decoration is customized, so the price depends on your request. We tell you the price on Telegram once you contact us.",am:"እያንዳንዱ ዲኮር በጥያቄዎ መሰረት ስለሚዘጋጅ ዋጋው እንደ ጥያቄዎ ይለያያል። ሲያናግሩን በቴሌግራም ዋጋውን እንነግርዎታለን።"}},
+    {q:{en:"Do you work outside Harar?",am:"ከሐረር ውጭ ትሰራላችሁ?"},a:{en:"Yes, we also work in places close to Harar. Tell us the location when you message us.",am:"አዎ፣ በሐረር አቅራቢያ ባሉ ቦታዎችም እንሰራለን። ሲጽፉልን ቦታውን ይንገሩን።"}},
+    {q:{en:"Can I change a design?",am:"ዲዛይኑን መቀየር እችላለሁ?"},a:{en:"Yes. Every photo is a starting point. Colors, theme and details can be changed to fit your event.",am:"አዎ። እያንዳንዱ ፎቶ መነሻ ነው። ቀለሙን፣ ጭብጡንና ዝርዝሩን ለዝግጅትዎ እንዲስማማ መቀየር ይቻላል።"}},
+    {q:{en:"When should I contact you?",am:"መቼ ላናግራችሁ?"},a:{en:"As early as you can. Include the date of your event in your first message so we can tell you if we are available.",am:"በተቻለ መጠን ቀደም ብለው። በመጀመሪያ መልእክትዎ የዝግጅቱን ቀን ይጥቀሱ፤ ነጻ መሆናችንን እንነግርዎታለን።"}}
+  ];
+  var PAL={
+    christening:["#DCE8F3","#B9CCE0","#8FB0D3","#F3F6FA","#E0BE70"],
+    birthday:["#FBE3EA","#F2C1CF","#F29BB5","#9AD0D8","#F2D27A"],
+    graduation:["#E9ECF4","#C9D0E3","#27304F","#E0BE70","#F5F0E3"],
+    shimgilina:["#EDE3CF","#D8C7A3","#B5802B","#6E8B5B","#F5EEDC"],
+    bride:["#F7DDE0","#E9B7C0","#D97C91","#F4C9D1","#E0BE70"],
+    wedding:["#F4EBDD","#DCC9A5","#F7F1E6","#E0BE70","#C9A24B"],
+    melse:["#D3E4D9","#A5C6B1","#1F6B4D","#E0BE70","#F5F0E3"],
+    kilkil:["#FFE7C2","#F7B8A2","#E8574D","#F2B632","#3C9D9B"],
+    babyshower:["#E8EEF2","#CFDCE4","#A9C6D8","#F2D8C4","#F7F3EA"],
+    henna:["#F6E3C6","#E2B987","#B5642E","#E0BE70","#7A3E1E"],
+    other:["#E6E2F0","#C5BEDD","#8C80C0","#E0BE70","#F5F2FA"]
+  };
+  var RATIOS=["4/5","1/1","3/4","5/4","4/5","3/4"];
+
+  function $(s){return document.querySelector(s)}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+  function catOf(id){for(var i=0;i<CATS.length;i++)if(CATS[i].id===id)return CATS[i];return CATS[CATS.length-1]}
+  function ratioOf(p,i){return p.ratio||(p.img?"4/5":RATIOS[i%RATIOS.length])}
+
+  var phCache={};
+  function ph(seed,cat,ratio){
+    var P=PAL[cat]||PAL.other,rr=ratio.split("/").map(Number),W=400,H=Math.round(W*rr[1]/rr[0]),R=rng(seed*97+13);
+    var ax=W/2,r=W*0.31,top=H*0.14,floor=H*0.88,cy=top+r;
+    var s='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="'+P[0]+'"/><stop offset="1" stop-color="'+P[1]+'"/></linearGradient></defs><rect width="'+W+'" height="'+H+'" fill="url(#g)"/>';
+    s+='<path d="M'+(ax-r)+' '+floor+'V'+cy+'A'+r+' '+r+' 0 0 1 '+(ax+r)+' '+cy+'V'+floor+'Z" fill="#fff" fill-opacity=".3" stroke="#C9A24B" stroke-width="3"/>';
+    s+='<rect y="'+floor+'" width="'+W+'" height="'+(H-floor)+'" fill="#000" fill-opacity=".14"/>';
+    var cols=[P[2],P[3],P[4],"#E0BE70"];
+    function ball(x,y,rad){
+      var c=cols[Math.floor(R()*cols.length)];
+      return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+rad.toFixed(1)+'" fill="'+c+'"/><ellipse cx="'+(x-rad*.3).toFixed(1)+'" cy="'+(y-rad*.35).toFixed(1)+'" rx="'+(rad*.22).toFixed(1)+'" ry="'+(rad*.34).toFixed(1)+'" fill="#fff" fill-opacity=".38"/>';
+    }
+    for(var k=0;k<18;k++){var th=Math.PI*k/17;s+=ball(ax-r*Math.cos(th)+(R()-.5)*12,cy-r*Math.sin(th)+(R()-.5)*12,12+R()*12)}
+    [ax-r,ax+r].forEach(function(sx){for(var j=0;j<5;j++)s+=ball(sx+(R()-.5)*26,floor-8-j*(H*0.08)+(R()-.5)*10,10+R()*10)});
+    s+='</svg>';
+    return "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(s);
+  }
+  function srcOf(i){
+    var p=PHOTOS[i];
+    if(p.img)return p.img;
+    if(!phCache[i])phCache[i]=ph(i,p.cat,ratioOf(p,i));
+    return phCache[i];
+  }
+
+  var lang="en",cat="all",query="",sel=new Set(),lastFocus=null;
+  try{
+    var saved=localStorage.getItem("bd-lang");
+    if(saved==="am"||saved==="en")lang=saved;
+    else if(String(navigator.language||"").toLowerCase().indexOf("am")===0)lang="am";
+  }catch(e){}
+
+  function T(){return I18N[lang]}
+
+  function applyStatic(){
+    var d=T();
+    document.documentElement.lang=lang;
+    document.querySelectorAll("[data-i18n]").forEach(function(el){var k=el.getAttribute("data-i18n");if(typeof d[k]==="string")el.textContent=d[k]});
+    document.querySelectorAll("[data-i18n-ph]").forEach(function(el){el.placeholder=d[el.getAttribute("data-i18n-ph")]});
+    document.querySelectorAll("[data-i18n-aria]").forEach(function(el){el.setAttribute("aria-label",d[el.getAttribute("data-i18n-aria")])});
+    document.querySelectorAll("[data-lang]").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-lang")===lang?"true":"false")});
+    $("#steps").innerHTML=STEPS.map(function(s){return "<li><b>"+esc(s.t[lang])+"</b><p>"+esc(s.d[lang])+"</p></li>"}).join("");
+    $("#faq").innerHTML=FAQ.map(function(f){return "<details><summary>"+esc(f.q[lang])+"</summary><p>"+esc(f.a[lang])+"</p></details>"}).join("");
+  }
+
+  function renderChips(){
+    var used={};PHOTOS.forEach(function(p){used[p.cat]=1});
+    var all=[{id:"all",en:T().all,am:T().all}].concat(CATS.filter(function(c){return used[c.id]}));
+    $("#chips").innerHTML=all.map(function(c){
+      return '<button type="button" class="chip" data-cat="'+c.id+'" aria-pressed="'+(c.id===cat)+'">'+esc(c[lang])+'</button>';
+    }).join("");
+  }
+
+  function visible(){
+    var q=query.trim().toLowerCase(),out=[];
+    PHOTOS.forEach(function(p,i){
+      if(cat!=="all"&&p.cat!==cat)return;
+      if(q){
+        var c=catOf(p.cat),hay=(p.en+" "+p.am+" "+c.en+" "+c.am).toLowerCase();
+        if(hay.indexOf(q)<0)return;
+      }
+      out.push(i);
+    });
+    if(cat==="all"){
+      var g={},o=[],n=0;
+      out.forEach(function(i){(g[PHOTOS[i].cat]=g[PHOTOS[i].cat]||[]).push(i)});
+      var ks=CATS.map(function(c){return c.id}).filter(function(k){return g[k]});
+      while(o.length<out.length){ks.forEach(function(k){if(g[k][n]!==undefined)o.push(g[k][n])});n++}
+      out=o;
+    }
+    return out;
+  }
+
+  function cardHTML(i){
+    var p=PHOTOS[i],c=catOf(p.cat),d=T(),on=sel.has(i),title=p[lang];
+    return '<article class="card'+(on?' on':'')+'" data-id="'+i+'">'+
+      '<button type="button" class="shot" data-open="'+i+'" style="aspect-ratio:'+ratioOf(p,i)+'" aria-label="'+esc(title)+'">'+
+        '<img src="'+srcOf(i)+'" alt="'+esc(title)+'" loading="lazy" decoding="async">'+
+        (p.img?'':'<span class="badge">'+esc(d.sample)+'</span>')+
+      '</button>'+
+      '<div class="cap"><div class="cap-t"><strong>'+esc(title)+'</strong><span>'+esc(c[lang])+'</span></div>'+
+        '<button type="button" class="pick" data-sel="'+i+'" aria-pressed="'+on+'" aria-label="'+esc(on?d.remove:d.select)+': '+esc(title)+'">'+
+          '<svg class="ico plus"><use href="#i-plus"/></svg><svg class="ico chk"><use href="#i-check"/></svg>'+
+        '</button></div></article>';
+  }
+
+  function renderGallery(){
+    var list=visible();
+    $("#grid").innerHTML=list.map(cardHTML).join("");
+    $("#empty").hidden=list.length>0;
+    $("#count").textContent=T().works(list.length);
+  }
+
+  function paintCard(i){
+    var on=sel.has(i),d=T();
+    document.querySelectorAll('.card[data-id="'+i+'"]').forEach(function(card){
+      card.classList.toggle("on",on);
+      var b=card.querySelector(".pick");
+      b.setAttribute("aria-pressed",on);
+      b.setAttribute("aria-label",(on?d.remove:d.select)+": "+PHOTOS[i][lang]);
+    });
+  }
+
+  function buildMessage(){
+    var d=T(),ids=Array.from(sel).sort(function(a,b){return a-b});
+    var lines=ids.map(function(i){return "• "+PHOTOS[i][lang]+" ("+catOf(PHOTOS[i].cat)[lang]+")"});
+    return d.msgHello+"\n"+lines.join("\n")+"\n\n"+d.msgAsk;
+  }
+  function tgUrl(text){return "https://t.me/"+TG+"?text="+encodeURIComponent(text)}
+
+  function updateTray(){
+    var n=sel.size,d=T(),tray=$("#tray");
+    tray.hidden=n===0;
+    document.body.classList.toggle("has-tray",n>0);
+    if(n===0){$("#panel").hidden=true;$("#trayToggle").setAttribute("aria-expanded","false")}
+    $("#trayCount").textContent=d.picked(n);
+    var open=!$("#panel").hidden;
+    $("#trayToggle").textContent=open?d.hide:d.view;
+    $("#picks").innerHTML=Array.from(sel).sort(function(a,b){return a-b}).map(function(i){
+      return '<li><img src="'+srcOf(i)+'" alt=""><span>'+esc(PHOTOS[i][lang])+'</span><button type="button" data-remove="'+i+'" aria-label="'+esc(d.remove+": "+PHOTOS[i][lang])+'"><svg class="ico"><use href="#i-x"/></svg></button></li>';
+    }).join("");
+    var m=buildMessage();
+    $("#msg").value=m;
+    $("#trayTg").href=n?tgUrl(m):"https://t.me/"+TG;
+    syncLb();
+  }
+
+  function toggle(i){
+    if(sel.has(i))sel.delete(i);else sel.add(i);
+    paintCard(i);updateTray();
+  }
+
+  function syncLb(){
+    if($("#lb").hidden)return;
+    var i=+$("#lb").getAttribute("data-i"),on=sel.has(i),d=T();
+    $("#lbPick").querySelector("span").textContent=on?d.remove:d.select;
+    $("#lbPick").querySelector("svg use").setAttribute("href",on?"#i-x":"#i-check");
+  }
+  function openLb(i){
+    var p=PHOTOS[i];
+    lastFocus=document.activeElement;
+    $("#lb").setAttribute("data-i",i);
+    $("#lbImg").src=srcOf(i);$("#lbImg").alt=p[lang];
+    $("#lbTitle").textContent=p[lang];
+    $("#lbCat").textContent=catOf(p.cat)[lang];
+    $("#lb").hidden=false;
+    document.body.style.overflow="hidden";
+    syncLb();
+    $("#lbClose").focus();
+  }
+  function closeLb(){
+    $("#lb").hidden=true;
+    document.body.style.overflow="";
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
+  }
+
+  function copyText(text,btn,fieldToSelect){
+    var done=function(){
+      var t=btn.querySelector("span");if(!t)return;
+      var old=t.textContent;t.textContent=T().copied;
+      setTimeout(function(){t.textContent=old},1600);
+    };
+    var fallback=function(){
+      var ok=false;
+      try{
+        var ta=document.createElement("textarea");
+        ta.value=text;ta.setAttribute("readonly","");ta.style.position="fixed";ta.style.opacity="0";
+        document.body.appendChild(ta);ta.select();ok=document.execCommand("copy");document.body.removeChild(ta);
+      }catch(e){}
+      if(ok)done();else if(fieldToSelect)fieldToSelect.select();
+    };
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text).then(done,fallback);
+      else fallback();
+    }catch(e){fallback()}
+  }
+
+  function setLang(l){
+    lang=l;
+    try{localStorage.setItem("bd-lang",l)}catch(e){}
+    applyStatic();renderChips();renderGallery();updateTray();
+  }
+
+  document.addEventListener("click",function(e){
+    var t=e.target.closest("button,a");if(!t)return;
+    if(t.hasAttribute("data-lang"))return setLang(t.getAttribute("data-lang"));
+    if(t.hasAttribute("data-cat")){cat=t.getAttribute("data-cat");renderChips();renderGallery();return}
+    if(t.hasAttribute("data-open"))return openLb(+t.getAttribute("data-open"));
+    if(t.hasAttribute("data-sel"))return toggle(+t.getAttribute("data-sel"));
+    if(t.hasAttribute("data-remove"))return toggle(+t.getAttribute("data-remove"));
+    if(t.hasAttribute("data-copy"))return copyText(t.getAttribute("data-copy"),t);
+    if(t.id==="reset"){cat="all";query="";$("#q").value="";renderChips();renderGallery();return}
+    if(t.id==="trayToggle"){
+      var p=$("#panel");p.hidden=!p.hidden;
+      t.setAttribute("aria-expanded",String(!p.hidden));
+      t.textContent=p.hidden?T().view:T().hide;return;
+    }
+    if(t.id==="clearAll"){var ids=Array.from(sel);sel.clear();ids.forEach(paintCard);updateTray();return}
+    if(t.id==="copyMsg")return copyText($("#msg").value,t,$("#msg"));
+    if(t.id==="lbClose")return closeLb();
+    if(t.id==="lbPick"){toggle(+$("#lb").getAttribute("data-i"));return}
+  });
+  $("#lb").addEventListener("click",function(e){if(e.target===$("#lb"))closeLb()});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!$("#lb").hidden)closeLb()});
+  $("#q").addEventListener("input",function(e){query=e.target.value;renderGallery()});
+  $("#msg").addEventListener("input",function(e){$("#trayTg").href=tgUrl(e.target.value)});
+
+  applyStatic();renderChips();renderGallery();updateTray();
+})();
+</script>
+
+</body></html>
